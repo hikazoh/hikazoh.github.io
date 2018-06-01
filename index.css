@@ -5,3 +5,13 @@
 .boxContainer{
     overflow: hidden;
 }
+
+.boxContainer:before,
+.boxContainer:after{
+    content: "";
+    display: table;
+}
+
+.boxContainer:after{
+    clear:both;
+}
