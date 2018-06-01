@@ -1,17 +1,8 @@
 .box{
-    float: left;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .boxContainer{
-    overflow: hidden;
-}
-
-.boxContainer:before,
-.boxContainer:after{
-    content: "";
-    display: table;
-}
-
-.boxContainer:after{
-    clear:both;
+    font-size: 0;
 }
