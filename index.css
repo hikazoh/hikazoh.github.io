@@ -1,8 +1,6 @@
-.box{
-    display: inline-block;
-    font-size: 16px;
-}
-
 .boxContainer{
-    font-size: 0;
+    display: flex;
+}
+.box {
+    display: flex;
 }
