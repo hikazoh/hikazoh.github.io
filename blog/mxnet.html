@@ -13,13 +13,24 @@
            <p>jni.hがないなどといって怒られました。
            jdkのインストールディレクトリを${HOME}/bin/jdkとしておきます。</p>
            <pre>
-          
+--- a/Makefile
++++ b/Makefile
+@@ -76,7 +76,7 @@ include $(DMLC_CORE)/make/dmlc.mk
+ 
+ # all tge possible warning tread
+ WARNFLAGS= -Wall -Wsign-compare
+-CFLAGS = -DMSHADOW_FORCE_STREAM $(WARNFLAGS)
++CFLAGS = -DMSHADOW_FORCE_STREAM $(WARNFLAGS) -I${HOME}/bin/jdk/include -I${HOME}/bin/jdk/include/linux
+ 
+ ifeq ($(DEV), 1)
+        CFLAGS += -g -Werror
+
           </pre>
+           <p>ここで再度<pre> make </pre>で無事<pre>lib/libmxnet.a lib/libmxnet.so</pre>ができました。</p>
             <p>そのあとでscala環境でjarを作ります。これがはまった。</p>
             <p>まずはなーんに考えず<pre> make scalapkg</pre>やるとエラー吐くですよねぇ。
-                    そこでエラーメッセージを調べてみるとライブラリが無いってことでした。</p>
-           <h2>libmxnet.aをmake</h2>
-            <p></p>
+                    そこでエラーメッセージを調べてみるとどーもscalaとjdk10の相性の問題っぽいっことのように気が付きました。</p>
+            <p>面倒なのでjdk10→jdk8へ変えて再度コンパイルしました</p>
         </div>
     </body>
 </html>
