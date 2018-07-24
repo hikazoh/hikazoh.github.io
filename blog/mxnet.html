@@ -10,8 +10,16 @@
             <pre>git clone https://github.com/apache/incubator-mxnet</pre>
             <p>libmxnet.aを作ります</p>
             <pre> make </pre>
+           <p>jni.hがないなどといって怒られました。
+           jdkのインストールディレクトリを${HOME}/bin/jdkとしておきます。</p>
+           <pre>
+          
+          </pre>
             <p>そのあとでscala環境でjarを作ります。これがはまった。</p>
-            <p>
+            <p>まずはなーんに考えず<pre> make scalapkg</pre>やるとエラー吐くですよねぇ。
+                    そこでエラーメッセージを調べてみるとライブラリが無いってことでした。</p>
+           <h2>libmxnet.aをmake</h2>
+            <p></p>
         </div>
     </body>
 </html>
