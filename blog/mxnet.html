@@ -48,11 +48,15 @@
 (defproject imclassification "0.1.0-SNAPSHOT"
   :description "Clojure examples for image classification"
   :plugins [[lein-cljfmt "0.5.7"]]
-  :dependencies [[org.clojure/clojure "1.9.0"] [riddley "0.1.15"][clj-tuple "0.2.2"]]
+  :dependencies [[org.clojure/clojure "1.9.0"] 
+                 [riddley "0.1.15"]
+                 [clj-tuple "0.2.2"]
+                 [org.clojure/tools.logging "0.4.0"]
+                 [org.apache.logging.log4j/log4j-core "2.8.1"]
+                 [org.apache.logging.log4j/log4j-api "2.8.1"]
+                 [org.slf4j/slf4j-log4j12 "1.7.25" :exclusins [org.slf4j/slf4j-api]]]
   :resource-paths ["${HOME}/clojure/incubator-mxnet/contrib/clojure-package/target/clojure-mxnet-1.3.0-SNAPSHOT.jar" 
-                   "${HOME}/clojure/incubator-mxnet/scala-package/assembly/linux-x86_64-cpu/target/mxnet-full_2.11-linux-x86_64-cpu-1.3.0-SNAPSHOT.jar"
-                   "${HOME}/bin/slf4j/slf4j-api-1.7.25.jar"
-                   "${HOME}/bin/slf4j/slf4j-ext-1.7.25.jar"]
+                   "${HOME}/clojure/incubator-mxnet/scala-package/assembly/linux-x86_64-cpu/target/mxnet-full_2.11-linux-x86_64-cpu-1.3.0-SNAPSHOT.jar"]
   :pedantic? :skip
   :main imclassification.train-mnist)
 
